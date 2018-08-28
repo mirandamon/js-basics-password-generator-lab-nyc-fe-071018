@@ -53,9 +53,10 @@ describe("password generation", () => {
       expect(password, 'Test Failed: No uppercase letters').to.match(/[A-Z]+/)
       expect(password, 'Test Failed: No numbers').to.match(/[0-9]+/)
       expect(password, 'Test Failed: No special characters').to.match(/[^A-Za-z0-9]+/)
-
+      console.log(password)
       submit.click()
       const passwordTwo = document.querySelector("output").innerText
+      console.log(passwordTwo)
       expect(passwordTwo, "Second password request did not change output content").to.not.equal(password)
       expect(password, 'Test Failed: No text was found in the <output> element').to.exist
       expect(password, 'Test Failed: No lowercase letters').to.match(/[a-z]+/)
